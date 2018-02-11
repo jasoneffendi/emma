@@ -9,7 +9,7 @@ class App extends Component {
       console.log('Hi annyang')
       annyang.debug();
       var commands = {
-        'hello world': function () { alert('Hello'); }
+        'Emma turn light number :number on': function (number) { alert(number); }
       };
       // Add our commands to annyang
       annyang.addCommands(commands);

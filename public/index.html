@@ -37,4 +37,11 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script type="text/javascript">
+    var timeout = setTimeout("location.reload(true);", 60000);
+    function resetTimeout() {
+      clearTimeout(timeout);
+      timeout = setTimeout("location.reload(true);", 60000);
+    }
+  </script>
 </html>
