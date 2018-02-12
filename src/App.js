@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import annyang from 'annyang'
+import { blink, off } from './helpers/requests'
 
 class App extends Component {
   render() {
@@ -9,7 +10,18 @@ class App extends Component {
       console.log('Hi annyang')
       annyang.debug();
       var commands = {
-        'Emma turn light number :number on': function (number) { alert(number); }
+        'Emma turn light number :number on': function (number) { 
+          blink()
+          .then(res => {
+            console.log(res)
+          }) 
+        },
+        'Emma turn light number :number off': function (number) {
+          off()
+            .then(res => {
+              console.log(res)
+            })
+        }
       };
       // Add our commands to annyang
       annyang.addCommands(commands);
